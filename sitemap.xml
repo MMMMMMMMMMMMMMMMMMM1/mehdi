@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://elallam.fr/</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/assets/documents/CV_Mehdi_EL-ALLAM_Q3.pdf</loc>
+  <lastmod>2025-11-07T21:01:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/projet-jeu-video.html</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/projet-base-donnees.html</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/projet-sites-web.html</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/projet-code-game-jam.html</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://elallam.fr/index.html</loc>
+  <lastmod>2025-11-07T21:01:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
