@@ -3,441 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projet SAÉ - Développement d'un jeu vidéo 2D rétro avec C# et WPF">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
+    <meta name="description" content="Projet SAÉ - Jeu vidéo 2D">
     <title>Jeu Vidéo 2D - Mehdi EL ALLAM</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/project-page.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <span class="logo-text">MEA</span>
-                </a>
-            </div>
+            <div class="logo"><a href="index.html"><span class="logo-text">MEA</span></a></div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
-                <li><a href="index.html#presentation" class="nav-link">Présentation</a></li>
-                <li><a href="index.html#cv" class="nav-link">CV</a></li>
                 <li><a href="index.html#projets" class="nav-link active">Réalisations</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Accueil</a>
-                <span>/</span>
-                <a href="index.html#projets">Projets</a>
-                <span>/</span>
-                <span>Jeu Vidéo 2D</span>
-            </div>
+            <div class="breadcrumb"><a href="index.html">Accueil</a><span>/</span><a href="index.html#projets">Projets</a><span>/</span><span>Jeu Vidéo</span></div>
             <h1 class="project-title">Développement d'un jeu vidéo 2D rétro</h1>
             <p class="project-meta">SAÉ S2 - Projet académique | 2024</p>
-            <div class="project-tags-hero">
-                <span class="tag">C#</span>
-                <span class="tag">WPF</span>
-                <span class="tag">.NET</span>
-                <span class="tag">UML</span>
-                <span class="tag">Git/GitHub</span>
-            </div>
         </div>
     </section>
 
-    <!-- Project Content -->
     <section class="section project-content">
         <div class="container">
-            <!-- Contexte -->
             <div class="content-block card-animate">
-                <div class="icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    </svg>
-                </div>
                 <h2>Contexte du projet</h2>
-                <div class="content-info">
-                    <div class="info-item">
-                        <strong>Type de projet :</strong> SAÉ (Situation d'Apprentissage et d'Évaluation) S2
-                    </div>
-                    <div class="info-item">
-                        <strong>Cadre :</strong> Académique - Projet en équipe de 4 étudiants
-                    </div>
-                    <div class="info-item">
-                        <strong>Durée :</strong> 8 semaines (Février - Mars 2024)
-                    </div>
-                    <div class="info-item">
-                        <strong>Objectifs :</strong> Concevoir et développer un jeu vidéo 2D rétro en respectant les principes de la programmation orientée objet et les bonnes pratiques de développement
-                    </div>
+                <p>Développement complet d'un jeu en C# avec WPF.</p>
                 </div>
-                <p>
-                    Ce projet s'inscrit dans le cadre de la SAÉ du semestre 2 du BUT Informatique. L'objectif était de concevoir et développer un jeu vidéo 2D complet en utilisant le framework WPF et le langage C#. Le projet devait respecter un cahier des charges précis tout en laissant place à la créativité pour la conception du gameplay.
-                </p>
-                <h3>Contraintes techniques</h3>
-                <ul>
-                    <li>Utilisation obligatoire du framework WPF avec C#</li>
-                    <li>Application des principes de la programmation orientée objet</li>
-                    <li>Conception UML complète avant développement</li>
-                    <li>Gestion de version avec Git et GitHub</li>
-                    <li>Mise en place de tests unitaires</li>
-                    <li>Interface utilisateur responsive et intuitive</li>
-                    <li>Respect des normes de codage et documentation du code</li>
-                </ul>
-            </div>
-
-            <!-- Méthodes de travail -->
-            <div class="content-block card-animate">
-                <div class="icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
-                </div>
-                <h2>Méthodes de travail</h2>
-
-                <h3>Organisation agile</h3>
-                <p>
-                    Nous avons adopté une méthodologie agile inspirée de Scrum avec des sprints d'une semaine. Chaque sprint débutait par une réunion de planification et se terminait par une démonstration et une rétrospective.
-                </p>
-                <ul>
-                    <li><strong>Sprint 1-2 :</strong> Conception UML, architecture logicielle, setup du projet</li>
-                    <li><strong>Sprint 3-4 :</strong> Développement du moteur de jeu et des mécaniques de base</li>
-                    <li><strong>Sprint 5-6 :</strong> Développement de l'interface utilisateur et des niveaux</li>
-                    <li><strong>Sprint 7 :</strong> Tests, corrections de bugs, optimisations</li>
-                    <li><strong>Sprint 8 :</strong> Documentation, préparation de la présentation finale</li>
-                </ul>
-
-                <h3>Outils et technologies</h3>
-                <div class="tools-grid">
-                    <div class="tool-item">
-                        <h4>Développement</h4>
-                        <p>Visual Studio 2022, .NET 6.0, C# 10</p>
-                    </div>
-                    <div class="tool-item">
-                        <h4>Conception</h4>
-                        <p>Visual Paradigm pour les diagrammes UML</p>
-                    </div>
-                    <div class="tool-item">
-                        <h4>Gestion de version</h4>
-                        <p>Git, GitHub, GitHub Desktop</p>
-                    </div>
-                    <div class="tool-item">
-                        <h4>Communication</h4>
-                        <p>Discord, Microsoft Teams</p>
-                    </div>
-                </div>
-
-                <h3>Étapes de développement</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Phase 1 : Conception</h4>
-                            <ul>
-                                <li>Brainstorming et définition du concept de jeu</li>
-                                <li>Élaboration des diagrammes UML (cas d'utilisation, classes, séquence)</li>
-                                <li>Design de l'architecture logicielle (pattern MVC)</li>
-                                <li>Maquettage de l'interface utilisateur</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Phase 2 : Développement du moteur</h4>
-                            <ul>
-                                <li>Mise en place de la boucle de jeu</li>
-                                <li>Système de gestion des entités et composants</li>
-                                <li>Détection des collisions</li>
-                                <li>Gestion des sprites et animations</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Phase 3 : Gameplay et niveaux</h4>
-                            <ul>
-                                <li>Implémentation des mécaniques de jeu</li>
-                                <li>Création de multiples niveaux avec difficulté progressive</li>
-                                <li>Système de score et de high scores</li>
-                                <li>Gestion des vies et game over</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Phase 4 : Interface et Polish</h4>
-                            <ul>
-                                <li>Développement de l'interface WPF (menus, HUD)</li>
-                                <li>Ajout d'effets visuels et sonores</li>
-                                <li>Tests unitaires et intégration</li>
-                                <li>Optimisations de performance</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Résultats -->
-            <div class="content-block card-animate">
-                <div class="icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
-                </div>
-                <h2>Résultats obtenus</h2>
-
-                <h3>Fonctionnalités implémentées</h3>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Moteur de jeu 2D complet avec boucle de rendu optimisée</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Système de collisions précis avec détection pixel-perfect</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>5 niveaux jouables avec difficulté progressive</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Interface WPF moderne et responsive</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Système de sauvegarde des scores et paramètres</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span>Effets visuels et animations fluides</span>
-                    </div>
-                </div>
-
-                <h3>Performances et qualité du code</h3>
-                <ul>
-                    <li><strong>Couverture de tests :</strong> 75% du code couvert par des tests unitaires</li>
-                    <li><strong>Performance :</strong> 60 FPS constants même sur configurations modestes</li>
-                    <li><strong>Architecture :</strong> Pattern MVC respecté, séparation claire des responsabilités</li>
-                    <li><strong>Documentation :</strong> Code entièrement commenté avec documentation XML</li>
-                    <li><strong>Commits Git :</strong> Plus de 150 commits avec messages clairs et conventionnels</li>
-                </ul>
-
-                <h3>Évaluation finale</h3>
-                <p>
-                    Le projet a été évalué à <strong>16/20</strong> avec les félicitations du jury pour la qualité de l'architecture logicielle et le respect des bonnes pratiques de développement. Les points forts soulignés incluent la documentation exhaustive, l'utilisation efficace de Git et la qualité de la présentation.
-                </p>
-            </div>
-
-            <!-- Apprentissages -->
-            <div class="content-block card-animate">
-                <div class="icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
-                </div>
-                <h2>Apprentissages réalisés</h2>
-
-                <h3>Compétences techniques</h3>
-                <div class="skills-learned">
-                    <div class="skill-category">
-                        <h4>Programmation C# et .NET</h4>
-                        <ul>
-                            <li>Maîtrise approfondie du langage C# 10 et des fonctionnalités modernes</li>
-                            <li>Utilisation avancée du framework .NET 6.0</li>
-                            <li>Programmation orientée objet : héritage, polymorphisme, interfaces</li>
-                            <li>Gestion de la mémoire et optimisation des performances</li>
-                            <li>Utilisation de LINQ pour le traitement de données</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>WPF et interfaces graphiques</h4>
-                        <ul>
-                            <li>Architecture MVVM (Model-View-ViewModel)</li>
-                            <li>Data binding et commandes</li>
-                            <li>Création d'animations fluides avec Storyboards</li>
-                            <li>Gestion des ressources et styles</li>
-                            <li>Responsive design avec Grid et Canvas</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Conception logicielle</h4>
-                        <ul>
-                            <li>Modélisation UML complète (diagrammes de classes, séquence, activité)</li>
-                            <li>Patterns de conception : MVC, Singleton, Observer, Factory</li>
-                            <li>Architecture logicielle et séparation des couches</li>
-                            <li>Principes SOLID</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Gestion de version et collaboration</h4>
-                        <ul>
-                            <li>Maîtrise de Git : branches, merge, rebase, pull requests</li>
-                            <li>Workflow GitFlow pour la gestion des releases</li>
-                            <li>Résolution de conflits de merge</li>
-                            <li>Code review et conventions de commit</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Compétences humaines et méthodologiques</h3>
-                <ul class="soft-skills">
-                    <li><strong>Travail en équipe :</strong> Collaboration avec 3 autres développeurs, répartition des tâches, communication régulière</li>
-                    <li><strong>Gestion de projet agile :</strong> Planification des sprints, daily stand-ups, rétrospectives</li>
-                    <li><strong>Communication technique :</strong> Rédaction de documentation, présentation orale du projet</li>
-                    <li><strong>Résolution de problèmes :</strong> Débogage complexe, optimisation de performances</li>
-                    <li><strong>Autonomie :</strong> Recherche de solutions, apprentissage de nouvelles technologies</li>
-                    <li><strong>Gestion du temps :</strong> Respect des deadlines, priorisation des tâches</li>
-                </ul>
-
-                <h3>Ce que ce projet m'a apporté personnellement</h3>
-                <p>
-                    Ce projet a été une expérience formatrice qui m'a permis de développer des compétences essentielles pour ma future carrière d'ingénieur informatique. J'ai particulièrement apprécié :
-                </p>
-                <ul>
-                    <li>La satisfaction de créer un produit complet et fonctionnel de bout en bout</li>
-                    <li>L'apprentissage de la rigueur nécessaire au développement logiciel professionnel</li>
-                    <li>La collaboration en équipe et le partage de connaissances</li>
-                    <li>La résolution de problèmes techniques complexes</li>
-                    <li>L'importance de la documentation et des bonnes pratiques</li>
-                </ul>
-                <p>
-                    Cette expérience a renforcé ma passion pour le développement logiciel et m'a donné confiance en mes capacités à mener à bien des projets d'envergure.
-                </p>
-            </div>
-
-            <!-- Contribution personnelle -->
-            <div class="content-block card-animate">
-                <div class="icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                </div>
-                <h2>Ma contribution personnelle</h2>
-
-                <h3>Rôles et responsabilités</h3>
-                <p>
-                    Dans ce projet en équipe de 4 personnes, j'ai occupé le rôle de <strong>Lead Developer</strong> et <strong>Architecte logiciel</strong>. Mes responsabilités principales incluaient :
-                </p>
-
-                <div class="contribution-grid">
-                    <div class="contribution-item">
-                        <h4>Architecture logicielle (40%)</h4>
-                        <ul>
-                            <li>Conception de l'architecture globale du projet (pattern MVC)</li>
-                            <li>Création des diagrammes UML (classes, séquence, activité)</li>
-                            <li>Définition des interfaces et des contrats entre composants</li>
-                            <li>Établissement des conventions de codage</li>
-                        </ul>
-                    </div>
-                    <div class="contribution-item">
-                        <h4>Développement du moteur de jeu (35%)</h4>
-                        <ul>
-                            <li>Implémentation de la boucle de jeu principale</li>
-                            <li>Développement du système de gestion des entités</li>
-                            <li>Création du système de détection de collisions</li>
-                            <li>Optimisation des performances et gestion de la mémoire</li>
-                        </ul>
-                    </div>
-                    <div class="contribution-item">
-                        <h4>Gestion de version (15%)</h4>
-                        <ul>
-                            <li>Setup du repository GitHub et des workflows</li>
-                            <li>Revue de code des pull requests</li>
-                            <li>Résolution des conflits de merge</li>
-                            <li>Gestion des branches et des releases</li>
-                        </ul>
-                    </div>
-                    <div class="contribution-item">
-                        <h4>Documentation (10%)</h4>
-                        <ul>
-                            <li>Rédaction du README et de la documentation technique</li>
-                            <li>Commentaires et documentation XML du code</li>
-                            <li>Guide d'installation et de contribution</li>
-                            <li>Préparation de la présentation finale</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <h3>Réalisations concrètes</h3>
-                <ul class="achievements">
-                    <li><strong>Classes développées :</strong> 15+ classes incluant GameEngine, Entity, CollisionManager, SceneManager</li>
-                    <li><strong>Lignes de code :</strong> Environ 3000 lignes de code C# (sur 8000 total)</li>
-                    <li><strong>Tests unitaires :</strong> 40+ tests couvrant les fonctionnalités critiques</li>
-                    <li><strong>Commits GitHub :</strong> 80+ commits avec messages détaillés</li>
-                    <li><strong>Code reviews :</strong> Revue et validation de 50+ pull requests</li>
-                </ul>
-
-                <h3>Défis surmontés</h3>
-                <p>
-                    Plusieurs défis techniques ont nécessité des solutions créatives :
-                </p>
-                <ul>
-                    <li><strong>Optimisation des performances :</strong> J'ai résolu des problèmes de framerate en implémentant un système de pooling d'objets et en optimisant la détection de collisions avec une grille spatiale</li>
-                    <li><strong>Gestion des conflits Git :</strong> J'ai mis en place un workflow clair et formé l'équipe à Git pour éviter les conflits</li>
-                    <li><strong>Architecture évolutive :</strong> J'ai conçu une architecture modulaire permettant d'ajouter facilement de nouvelles fonctionnalités</li>
-                </ul>
-
-                <div class="personal-highlight">
-                    <h4>Point de fierté</h4>
-                    <p>
-                        Ma plus grande fierté dans ce projet est d'avoir réussi à créer une architecture logicielle robuste et maintenable qui a permis à toute l'équipe de travailler efficacement sans se marcher sur les pieds. Le feedback de mes coéquipiers a été extrêmement positif, soulignant la clarté de la structure et la facilité d'intégration de nouvelles fonctionnalités.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Back to projects -->
             <div class="back-link">
-                <a href="index.html#projets" class="btn btn-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                    </svg>
-                    Retour aux projets
-                </a>
+                <a href="index.html#projets" class="btn btn-secondary">Retour aux projets</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Mehdi EL ALLAM. Tous droits réservés.</p>
-                <p class="footer-subtitle">Étudiant en BUT Informatique | Réserviste Chasseur Alpin</p>
-            </div>
+            <p>&copy; 2025 Mehdi EL ALLAM.</p>
         </div>
     </footer>
-
-    <script src="assets/js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
