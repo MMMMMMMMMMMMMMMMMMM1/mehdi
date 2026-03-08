@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio de Mehdi EL ALLAM - Étudiant en BUT Informatique, Réserviste Chasseur Alpin">
+    <meta name="author" content="Mehdi EL ALLAM">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
+    <title>Mehdi EL ALLAM - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-text">Mehdi EL ALLAM</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#accueil" class="nav-link active" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="#presentation" class="nav-link" data-i18n="nav.about">Présentation</a></li>
+                <li><a href="#cv" class="nav-link" data-i18n="nav.cv">CV</a></li>
+                <li><a href="#projets" class="nav-link" data-i18n="nav.projects">Réalisations</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" id="snow-toggle" aria-label="Activer la neige">
+                    <!-- Snowflake Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="2" x2="12" y2="22"></line>
+                        <line x1="12" y1="2" x2="12" y2="22" transform="rotate(60 12 12)"></line>
+                        <line x1="12" y1="2" x2="12" y2="22" transform="rotate(120 12 12)"></line>
+                        <path d="m12 6 2-2"></path>
+                        <path d="m12 6-2-2"></path>
+                        <path d="m14.8 7.5 1.7-1"></path>
+                        <path d="m14.8 7.5-1-1.7"></path>
+                        <path d="m16.5 10.8 2 .3"></path>
+                        <path d="m16.5 10.8 1.5-1.3"></path>
+                        <path d="m16.5 13.2 2-.3"></path>
+                        <path d="m16.5 13.2 1.5 1.3"></path>
+                        <path d="m14.8 16.5 1.7 1"></path>
+                        <path d="m14.8 16.5-1 1.7"></path>
+                        <path d="m12 18 2 2"></path>
+                        <path d="m12 18-2 2"></path>
+                        <path d="m9.2 16.5-1.7 1"></path>
+                        <path d="m9.2 16.5 1 1.7"></path>
+                        <path d="m7.5 13.2-2-.3"></path>
+                        <path d="m7.5 13.2-1.5 1.3"></path>
+                        <path d="m7.5 10.8-2 .3"></path>
+                        <path d="m7.5 10.8-1.5-1.3"></path>
+                        <path d="m9.2 7.5-1.7-1"></path>
+                        <path d="m9.2 7.5 1-1.7"></path>
+                    </svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fond de montagnes permanent sur toute la page -->
+    <div class="global-mountain-background">
+        <canvas id="stars-canvas"></canvas>
+        <div class="mountain-layer mountain-back"></div>
+        <div class="mountain-layer mountain-mid"></div>
+        <div class="mountain-layer mountain-front"></div>
+        <div class="snow-container" id="snow-container"></div>
+    </div>
+
+    <!-- Skieur militaire qui suit le scroll -->
+    <!-- Indicateur de progression simple -->
+    <div class="scroll-progress-indicator">
+        <div class="progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container hero-content">
+            <div class="hero-profile">
+                <div class="profile-image-wrapper">
+                    <div class="profile-glow"></div>
+                    <img src="assets/images/mehdi.jpg" alt="Mehdi EL ALLAM" class="profile-image">
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting" data-i18n="hero.greeting">Bonjour, je suis</span>
+                    <span class="name">Mehdi EL ALLAM</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Étudiant en 2ème année de BUT Informatique</p>
+                <p class="hero-description">
+                    <span data-i18n="hero.description">Passionné par le développement logiciel, les bases de données et
+                        les systèmes.</span>
+                    <br><span data-i18n="hero.description2">Réserviste au 4ᵉ régiment de chasseurs alpins</span>
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label" data-i18n="hero.years">Années d'études</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label" data-i18n="hero.projects">Projets réalisés</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">9+</span>
+                        <span class="stat-label" data-i18n="hero.languages">Langages maîtrisés</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projets" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <span data-i18n="hero.projects-btn">Mes projets</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span data-i18n="hero.contact-btn">Me contacter</span>
+                    </a>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="scroll-text" data-i18n="hero.scroll">Découvrir mon parcours</span>
+                    <div class="scroll-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Présentation Section -->
+    <section id="presentation" class="section presentation-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.about">À propos de moi</h2>
+            <p class="section-subtitle">Développeur, soldat, sportif — une passion, trois vies</p>
+
+            <div class="about-grid">
+
+                <!-- Bio -->
+                <div class="about-bio card-animate">
+                    <div class="about-bio-inner">
+                        <p>Tombé dans l'informatique par passion, pas par hasard. Ce qui m'attire
+                            c'est la complexité : comprendre comment les systèmes fonctionnent, les démonter
+                            mentalement, les reconstruire différemment.</p>
+                        <p>Côté militaire, j'ai choisi la <strong>réserve alpine</strong> pas pour une ligne sur un
+                            CV, mais parce que ça m'a appris à rester calme quand tout déraille. Aussi utile en mission
+                            qu'en débogage à 2h du matin.</p>
+                        <div class="about-tags">
+                            <span class="about-tag">BUT Informatique</span>
+                            <span class="about-tag">4ᵉ RCA</span>
+                            <span class="about-tag">Manosque → Montpellier</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formation timeline -->
+                <div class="about-formation card-animate">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Parcours de formation</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>BUT Informatique</h4>
+                                <span class="timeline-date">2024 – 2027</span>
+                                <p>Université de Montpellier</p>
+                                <ul class="timeline-skills">
+                                    <li><strong>Dev :</strong> Java, C#, Python, PHP, C</li>
+                                    <li><strong>BDD :</strong> SQL, Oracle, MySQL, PL/SQL</li>
+                                    <li><strong>Web :</strong> HTML, CSS, JavaScript</li>
+                                    <li><strong>Outils :</strong> Git, Linux, UML, .NET, WPF</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h4>Baccalauréat Général</h4>
+                                <span class="timeline-date">2024</span>
+                                <p>Lycée des Iscles, Manosque</p>
+                                <p>SVT · Physique-Chimie · Mathématiques</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot timeline-dot--military"></div>
+                            <div class="timeline-content">
+                                <h4>Réserviste — 4ᵉ RCA</h4>
+                                <span class="timeline-date"
+                                    style="background: rgba(245,158,11,0.12); color: #f59e0b; border-color: rgba(245,158,11,0.3);">2023
+                                    – présent</span>
+                                <p>Opération Sentinelle · Formation ski militaire · BSM 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centres d'intérêt -->
+                <div class="about-interests card-animate">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Centres d'intérêt</h3>
+                    <div class="interests-visual">
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏃</span>
+                            <span>Course à pied</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🚴</span>
+                            <span>Vélo de route</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏊</span>
+                            <span>Natation</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏋️</span>
+                            <span>Powerlifting</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🥊</span>
+                            <span>Sports de combat</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">⛷️</span>
+                            <span>Ski militaire</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">💻</span>
+                            <span>Développement</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🎮</span>
+                            <span>Game Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ambitions après le BUT -->
+                <div class="about-ambitions card-animate">
+                    <div class="icon-box"
+                        style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.15)); border-color: rgba(168,85,247,0.35); color: #a855f7;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <h3
+                        style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Ambitions après le BUT</h3>
+                    <div class="ambitions-list">
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🚀</div>
+                            <div>
+                                <h4>Ingénieur logiciel</h4>
+                                <p>Continuer en Master ou école d'ingénieurs (INP, Polytech…) avec une spécialisation en
+                                    développement backend ou systèmes embarqués.</p>
+                            </div>
+                        </div>
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🌍</div>
+                            <div>
+                                <h4>Expérience internationale</h4>
+                                <p>Travailler à l'international ou intégrer une startup innovante, idéalement dans la
+                                    cybersécurité ou le développement de jeux vidéo.</p>
+                            </div>
+                        </div>
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🪖</div>
+                            <div>
+                                <h4>Officier de réserve</h4>
+                                <p>Progresser dans la réserve militaire et combiner expertise technique avec engagement
+                                    citoyen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section cv-section">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+
+            <div class="cv-content">
+                <div class="cv-header card-animate">
+                    <div class="cv-profile">
+                        <div class="cv-avatar">
+                            <span>ME</span>
+                        </div>
+                        <div class="cv-info">
+                            <h3>Mehdi EL ALLAM</h3>
+                            <p class="cv-role">Étudiant en 2ème année de BUT Informatique</p>
+                            <p class="cv-status">En recherche de stage</p>
+                        </div>
+                    </div>
+                    <div class="cv-actions">
+                        <a href="assets/documents/cv_mehdi.pdf" download class="btn btn-primary"
+                            aria-label="Télécharger le CV">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Télécharger le CV
+                        </a>
+                        <div class="cv-links">
+                            <a href="https://www.linkedin.com/in/mehdi-el-allam-73b5432b9" target="_blank"
+                                rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/elallamm1" target="_blank"
+                                rel="noopener noreferrer" class="social-link" aria-label="GitLab">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-grid">
+                    <!-- Compétences techniques -->
+                    <div class="cv-card card-animate">
+                        <h3 class="cv-card-title">Compétences techniques</h3>
+                        <div class="skills-category">
+                            <h4>Langages de programmation</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Pascal</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">R</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">C</span>
+                                <span class="skill-tag">Java</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Frameworks et outils</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">.NET</span>
+                                <span class="skill-tag">WPF</span>
+                                <span class="skill-tag">UML</span>
+                                <span class="skill-tag">Visual Paradigm</span>
+                                <span class="skill-tag">JDBC</span>
+                                <span class="skill-tag">Hibernate</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Bases de données</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Oracle</span>
+                                <span class="skill-tag">SQL Developer</span>
+                                <span class="skill-tag">PL/SQL</span>
+                                <span class="skill-tag">SQL Server</span>
+                                <span class="skill-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Systèmes et réseaux</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">Windows Server</span>
+                                <span class="skill-tag">WireShark</span>
+                            </div>
+                        </div>
+                        <div class="skills-category">
+                            <h4>Outils de développement</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Visual Studio</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">MySQL Workbench</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formation -->
+                    <div class="cv-card card-animate">
+                        <h3 class="cv-card-title">Formation</h3>
+                        <div class="cv-item">
+                            <h4>BUT Informatique</h4>
+                            <span class="cv-date">2024 - 2027</span>
+                            <p>Université de Montpellier</p>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Baccalauréat Général</h4>
+                            <span class="cv-date">2024</span>
+                            <p>Spécialités : SVT, Physique-Chimie, Mathématiques complémentaires</p>
+                            <p>Lycée des Iscles, Manosque (04100)</p>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Permis B</h4>
+                            <span class="cv-date">2024</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Certifications & Événements -->
+                    <div class="cv-card card-animate">
+                        <h3 class="cv-card-title">Certifications & Événements</h3>
+                        <div class="cv-item">
+                            <h4>Nuit de l'Info 2024</h4>
+                            <span class="cv-date">Décembre 2024</span>
+                            <p>Défi national de programmation</p>
+                            <p style="margin-top: 0.5rem;">
+                                <a href="https://openbadgefactory.com/obv3/credentials/cc210053ed445de3c3a4c26d6d1c9444c7c31196"
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-small"
+                                    style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2"
+                                        style="margin-right: 0.5rem;">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    Voir le badge
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Parcours professionnel -->
+                    <div class="cv-card card-animate">
+                        <h3 class="cv-card-title">Parcours professionnel & Militaire</h3>
+                        <div class="cv-item">
+                            <h4>Réserviste - 4ᵉ Régiment de Chasseurs Alpins</h4>
+                            <span class="cv-date">2023 – présent</span>
+                            <ul>
+                                <li>Opération Sentinelle en Île-de-France (2024-2025)</li>
+                                <li>BSM (Brevet de Skieur Militaire) - 2025</li>
+                            </ul>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Travail en menuiserie</h4>
+                            <span class="cv-date">2023 – présent</span>
+                            <p>Activité professionnelle en parallèle des études</p>
+                        </div>
+                        <div class="cv-item">
+                            <h4>Vendeur en Boulangerie</h4>
+                            <span class="cv-date">2022 - 2024</span>
+                        </div>
+                    </div>
+
+                    <!-- Centres d'intérêt -->
+                    <div class="cv-card card-animate">
+                        <h3 class="cv-card-title">Centres d'intérêt</h3>
+                        <div class="interests">
+                            <div class="interest-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M12 6v6l4 2"></path>
+                                </svg>
+                                <span>Course à pied</span>
+                            </div>
+                            <div class="interest-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span>Vélo de route</span>
+                            </div>
+                            <div class="interest-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 12h20"></path>
+                                    <path d="M2 6h20"></path>
+                                    <path d="M2 18h20"></path>
+                                </svg>
+                                <span>Natation</span>
+                            </div>
+                            <div class="interest-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                </svg>
+                                <span>Powerlifting</span>
+                            </div>
+                            <div class="interest-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                    </path>
+                                </svg>
+                                <span>Sports de combat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projets Section -->
+    <section id="projets" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.projects">Mes réalisations</h2>
+            <p class="section-subtitle" data-i18n="section.projects-subtitle">Découvrez mes projets académiques et
+                personnels</p>
+
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <article class="project-card card-animate">
+                    <div class="project-image">
+                        <img src="assets/images/game-project.jpg" alt="Jeu Vidéo 2D">
+                        <div class="project-overlay">
+                            <a href="projet-jeu-video.html" class="btn btn-small">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Développement d'un jeu vidéo 2D</h3>
+                        <p class="project-type">SAÉ S2 - Projet académique</p>
+                        <p class="project-description">
+                            Réalisation d'un jeu rétro 2D avec conception UML complète, développement sous Visual
+                            Studio
+                            et WPF, gestion de version avec Git/GitHub.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">WPF</span>
+                            <span class="tag">.NET</span>
+                            <span class="tag">UML</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 2 -->
+                <article class="project-card card-animate">
+                    <div class="project-image">
+                        <img src="assets/images/database-project.jpg" alt="Base de Données">
+                        <div class="project-overlay">
+                            <a href="projet-base-donnees.html" class="btn btn-small">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Conception de base de données relationnelle</h3>
+                        <p class="project-type">SAÉ S3 - Projet académique</p>
+                        <p class="project-description">
+                            Conception et interrogation d'une base de données relationnelle complète à partir d'un
+                            cahier des charges, avec modélisation UML et requêtes SQL avancées.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">UML</span>
+                            <span class="tag">Modélisation</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 3 -->
+                <article class="project-card card-animate">
+                    <div class="project-image">
+                        <img src="assets/images/web-project.jpg" alt="Sites Web">
+                        <div class="project-overlay">
+                            <a href="projet-sites-web.html" class="btn btn-small">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Création de sites web responsives</h3>
+                        <p class="project-type">SAÉ S1 & S2 - Projets académiques</p>
+                        <p class="project-description">
+                            Développement de sites web responsives avec WordPress et HTML/CSS/JavaScript,
+                            optimisés pour ordinateurs et mobiles.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">WordPress</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 4 : Enchères -->
+                <article class="project-card card-animate">
+                    <div class="project-image">
+                        <img src="assets/images/database-project.jpg" alt="Application d'Enchères Électroniques">
+                        <div class="project-overlay">
+                            <a href="projet-enchere.html" class="btn btn-small">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application d'Enchères Électroniques</h3>
+                        <p class="project-type">SAÉ S3.B.01 — Projet académique en binôme</p>
+                        <p class="project-description">
+                            Système client-serveur d'enchères à plis fermés (protocole Vickrey). Architecture
+                            hybride : sockets TCP Java pour le protocole sécurisé, Spring Boot pour l'interface web.
+                            Réalisé en méthode Agile Scrum sur 5 sprints.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">TCP Sockets</span>
+                            <span class="tag">Cryptographie</span>
+                            <span class="tag">Scrum</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Compétences Section -->
+    <section id="competences" class="section">
+        <div class="container">
+            <h2 class="section-title">Bilan de compétences</h2>
+            <p class="section-subtitle">Cliquez sur une compétence pour voir le détail</p>
+
+            <div class="competences-grid">
+                <!-- Compétence 1 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="16" y1="18" x2="22" y2="12"></line>
+                            <line x1="22" y1="12" x2="16" y2="6"></line>
+                            <line x1="8" y1="6" x2="2" y2="12"></line>
+                            <line x1="2" y1="12" x2="8" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">C#, Java, PHP</span>
+                        <h3 class="comp-title">Réaliser un Développement d'Application</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 2 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #fca5a5; background: rgba(252, 165, 165, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Algorithmique, Complexité</span>
+                        <h3 class="comp-title">Optimiser des Applications</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 3 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #a855f7; background: rgba(168, 85, 247, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Linux, Réseaux, Serveurs</span>
+                        <h3 class="comp-title">Administrer des Systèmes Complexes</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 4 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">SQL, Oracle, MySQL</span>
+                        <h3 class="comp-title">Gérer des Données de l'Information</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 5 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #10b981; background: rgba(16, 185, 129, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Agile, Scrum, Trello</span>
+                        <h3 class="comp-title">Conduire un Projet</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 6 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #ec4899; background: rgba(236, 72, 153, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Git, Communication</span>
+                        <h3 class="comp-title">Collaborer au Sein d'une Équipe</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section.contact">Me contacter</h2>
+            <p class="section-subtitle" data-i18n="section.contact-subtitle">N'hésitez pas à me contacter pour toute
+                opportunité de stage ou collaboration</p>
+
+            <div class="contact-content">
+                <div class="contact-info card-animate">
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <div>
+                            <h4 data-i18n="contact.email">Email</h4>
+                            <a href="mailto:Mehdi.el-hallam@etu.umontpellier.fr">Mehdi.el-hallam@etu.umontpellier.fr</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div>
+                            <h4 data-i18n="contact.location">Localisation</h4>
+                            <p>Montpellier (34000) / Manosque (04100)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <div>
+                            <h4 data-i18n="contact.availability">Disponibilité</h4>
+                            <p data-i18n="contact.stage">Stage : 20 avril - 29 juin 2026 (10-12 semaines)</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links-contact">
+                        <a href="https://www.linkedin.com/in/mehdi-el-allam-73b5432b9" target="_blank"
+                            rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://gitlabinfo.iutmontp.univ-montp2.fr/elallamm1" target="_blank"
+                            rel="noopener noreferrer" class="social-btn" aria-label="GitLab">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.18l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z">
+                                </path>
+                            </svg>
+                            GitLab
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Mehdi EL ALLAM. Tous droits réservés.</p>
+                <p class="footer-subtitle">Étudiant en BUT Informatique | Réserviste Chasseur Alpin</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
