@@ -10,9 +10,7 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
     <title>Mehdi EL ALLAM - Portfolio</title>
-    
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -20,6 +18,7 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -30,10 +29,12 @@
                 <li><a href="#presentation" class="nav-link" data-i18n="nav.about">Présentation</a></li>
                 <li><a href="#cv" class="nav-link" data-i18n="nav.cv">CV</a></li>
                 <li><a href="#projets" class="nav-link" data-i18n="nav.projects">Réalisations</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
                 <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
                 <button class="theme-toggle-btn" id="snow-toggle" aria-label="Activer la neige">
+                    <!-- Snowflake Icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="12" y1="2" x2="12" y2="22"></line>
@@ -70,6 +71,7 @@
         </div>
     </nav>
 
+    <!-- Fond de montagnes permanent sur toute la page -->
     <div class="global-mountain-background">
         <canvas id="stars-canvas"></canvas>
         <div class="mountain-layer mountain-back"></div>
@@ -78,23 +80,19 @@
         <div class="snow-container" id="snow-container"></div>
     </div>
 
+    <!-- Skieur militaire qui suit le scroll -->
+    <!-- Indicateur de progression simple -->
     <div class="scroll-progress-indicator">
         <div class="progress-bar" id="scroll-progress"></div>
     </div>
 
+    <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="container hero-content">
             <div class="hero-profile">
                 <div class="profile-image-wrapper">
                     <div class="profile-glow"></div>
-                    <img src="mehdi.jpg" alt="Mehdi EL ALLAM" class="profile-image">
-                    <div class="profile-badge">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                    </div>
+                    <img src="assets/images/mehdi.jpg" alt="Mehdi EL ALLAM" class="profile-image">
                 </div>
             </div>
             <div class="hero-text">
@@ -149,43 +147,35 @@
         </div>
     </section>
 
+    <!-- Présentation Section -->
     <section id="presentation" class="section presentation-section">
         <div class="container">
             <h2 class="section-title" data-i18n="section.about">À propos de moi</h2>
+            <p class="section-subtitle">Développeur, soldat, sportif — une passion, trois vies</p>
 
-            <div class="presentation-content">
-                <div class="bio-card card-animate">
-                    <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
+            <div class="about-grid">
+
+                <!-- Bio -->
+                <div class="about-bio card-animate">
+                    <div class="about-bio-inner">
+                        <p>Tombé dans l'informatique par passion, pas par hasard. Ce qui m'attire
+                            c'est la complexité : comprendre comment les systèmes fonctionnent, les démonter
+                            mentalement, les reconstruire différemment.</p>
+                        <p>Côté militaire, j'ai choisi la <strong>réserve alpine</strong> pas pour une ligne sur un
+                            CV, mais parce que ça m'a appris à rester calme quand tout déraille. Aussi utile en mission
+                            qu'en débogage à 2h du matin.</p>
+                        <div class="about-tags">
+                            <span class="about-tag">BUT Informatique</span>
+                            <span class="about-tag">4ᵉ RCA</span>
+                            <span class="about-tag">Manosque → Montpellier</span>
+                        </div>
                     </div>
-                    <h3>Biographie</h3>
-                    <p>
-                        Passionné par le développement logiciel, les systèmes et les réseaux, je poursuis un BUT Informatique 
-                        en deuxième année à l’Université de Montpellier. Originaire de Manosque (04100),
-                        j'ai obtenu mon baccalauréat général avec les spécialités SVT, Physique-Chimie et Mathématiques
-                        complémentaires au Lycée des Iscles en 2024.
-                    </p>
-                    <p>
-                        Parallèlement à mes études, je suis réserviste au sein du 4ᵉ régiment de chasseurs alpins à Gap,
-                        où je développe des compétences en leadership, discipline et esprit d'équipe. Cette expérience
-                        militaire me permet d'acquérir rigueur et capacité d'adaptation dans des environnements
-                        exigeants.
-                    </p>
-                    <p>
-                        Mes centres d'intérêt reflètent mon goût pour le dépassement de soi : course à pied, vélo de
-                        route,
-                        natation, powerlifting et sports de combat. J'ai également travaillé en tant que vendeur en
-                        boulangerie et en menuiserie, développant ainsi mon sens du service et ma polyvalence.
-                    </p>
                 </div>
 
-                <div class="formation-card card-animate">
+                <!-- Formation timeline -->
+                <div class="about-formation card-animate">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
                             <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
@@ -197,16 +187,13 @@
                             <div class="timeline-dot"></div>
                             <div class="timeline-content">
                                 <h4>BUT Informatique</h4>
-                                <span class="timeline-date">2024 - 2027</span>
+                                <span class="timeline-date">2024 – 2027</span>
                                 <p>Université de Montpellier</p>
                                 <ul class="timeline-skills">
-                                    <li><strong>Compétences techniques :</strong> Programmation (Java, C#, Python, PHP),
-                                        bases de données (SQL, Oracle, MySQL), développement web (HTML, CSS,
-                                        JavaScript), systèmes et réseaux (Linux, Windows Server)</li>
-                                    <li><strong>Frameworks :</strong> .NET, WPF, JDBC, Hibernate</li>
-                                    <li><strong>Outils :</strong> Git, Visual Studio, WireShark, UML</li>
-                                    <li><strong>Compétences humaines :</strong> Travail en équipe, gestion de projet,
-                                        méthodes agiles, communication technique</li>
+                                    <li><strong>Dev :</strong> Java, C#, Python, PHP, C</li>
+                                    <li><strong>BDD :</strong> SQL, Oracle, MySQL, PL/SQL</li>
+                                    <li><strong>Web :</strong> HTML, CSS, JavaScript</li>
+                                    <li><strong>Outils :</strong> Git, Linux, UML, .NET, WPF</li>
                                 </ul>
                             </div>
                         </div>
@@ -215,52 +202,117 @@
                             <div class="timeline-content">
                                 <h4>Baccalauréat Général</h4>
                                 <span class="timeline-date">2024</span>
-                                <p>Lycée des Iscles, Manosque (04100)</p>
-                                <p>Spécialités : SVT, Physique-Chimie, Mathématiques complémentaires</p>
+                                <p>Lycée des Iscles, Manosque</p>
+                                <p>SVT · Physique-Chimie · Mathématiques</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot timeline-dot--military"></div>
+                            <div class="timeline-content">
+                                <h4>Réserviste — 4ᵉ RCA</h4>
+                                <span class="timeline-date"
+                                    style="background: rgba(245,158,11,0.12); color: #f59e0b; border-color: rgba(245,158,11,0.3);">2023
+                                    – présent</span>
+                                <p>Opération Sentinelle · Formation ski militaire · BSM 2025</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="military-card card-animate">
+                <!-- Centres d'intérêt -->
+                <div class="about-interests card-animate">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                             </path>
                         </svg>
                     </div>
-                    <h3>Engagement militaire</h3>
-                    <div class="military-content">
-                        <h4>4ᵉ Régiment de Chasseurs Alpins - Gap</h4>
-                        <span class="military-period">2023 - 2025</span>
-                        <ul class="military-missions">
-                            <li><strong>Opération Sentinelle</strong> en Île-de-France (2024-2025) : Missions de
-                                protection et surveillance de la population contre les risques terroristes</li>
-                            <li><strong>Formation spécialisée :</strong> Techniques de ski militaire et d'alpinisme,
-                                adaptation aux conditions climatiques extrêmes</li>
-                            <li><strong>BSM</strong> (Brevet de Skieur Militaire) - Prévu 2025</li>
-                        </ul>
-                        <h4>Compétences développées</h4>
-                        <ul class="military-skills">
-                            <li>Leadership : Encadrement d'équipes de 3 à 8 personnes en environnement hiérarchisé</li>
-                            <li>Coordination : Gestion d'actions opérationnelles en respectant la chaîne de commandement
-                            </li>
-                            <li>Communication : Transmission de consignes claires et précises en situation de stress
-                            </li>
-                            <li>Résilience : Maintien de la performance sous pression lors de missions sécuritaires</li>
-                            <li>Prise de décision : Décisions rapides en situation d'urgence avec évaluation des risques
-                            </li>
-                            <li>Adaptabilité : Adaptation rapide aux changements de consignes et conditions difficiles
-                            </li>
-                        </ul>
+                    <h3>Centres d'intérêt</h3>
+                    <div class="interests-visual">
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏃</span>
+                            <span>Course à pied</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🚴</span>
+                            <span>Vélo de route</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏊</span>
+                            <span>Natation</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🏋️</span>
+                            <span>Powerlifting</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🥊</span>
+                            <span>Sports de combat</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">⛷️</span>
+                            <span>Ski militaire</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">💻</span>
+                            <span>Développement</span>
+                        </div>
+                        <div class="interest-card">
+                            <span class="interest-emoji">🎮</span>
+                            <span>Game Dev</span>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Ambitions après le BUT -->
+                <div class="about-ambitions card-animate">
+                    <div class="icon-box"
+                        style="background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(236,72,153,0.15)); border-color: rgba(168,85,247,0.35); color: #a855f7;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <h3
+                        style="background: linear-gradient(135deg, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Ambitions après le BUT</h3>
+                    <div class="ambitions-list">
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🚀</div>
+                            <div>
+                                <h4>Ingénieur logiciel</h4>
+                                <p>Continuer en Master ou école d'ingénieurs (INP, Polytech…) avec une spécialisation en
+                                    développement backend ou systèmes embarqués.</p>
+                            </div>
+                        </div>
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🌍</div>
+                            <div>
+                                <h4>Expérience internationale</h4>
+                                <p>Travailler à l'international ou intégrer une startup innovante, idéalement dans la
+                                    cybersécurité ou le développement de jeux vidéo.</p>
+                            </div>
+                        </div>
+                        <div class="ambition-item">
+                            <div class="ambition-icon">🪖</div>
+                            <div>
+                                <h4>Officier de réserve</h4>
+                                <p>Progresser dans la réserve militaire et combiner expertise technique avec engagement
+                                    citoyen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <!-- CV Section -->
     <section id="cv" class="section cv-section">
         <div class="container">
             <h2 class="section-title">Curriculum Vitae</h2>
@@ -278,7 +330,7 @@
                         </div>
                     </div>
                     <div class="cv-actions">
-                        <a href="CV_Mehdi_EL-ALLAM_Q3.pdf" download class="btn btn-primary"
+                        <a href="assets/documents/cv_mehdi.pdf" download class="btn btn-primary"
                             aria-label="Télécharger le CV">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2">
@@ -312,6 +364,7 @@
                 </div>
 
                 <div class="cv-grid">
+                    <!-- Compétences techniques -->
                     <div class="cv-card card-animate">
                         <h3 class="cv-card-title">Compétences techniques</h3>
                         <div class="skills-category">
@@ -368,6 +421,7 @@
                         </div>
                     </div>
 
+                    <!-- Formation -->
                     <div class="cv-card card-animate">
                         <h3 class="cv-card-title">Formation</h3>
                         <div class="cv-item">
@@ -388,6 +442,7 @@
 
                     </div>
 
+                    <!-- Certifications & Événements -->
                     <div class="cv-card card-animate">
                         <h3 class="cv-card-title">Certifications & Événements</h3>
                         <div class="cv-item">
@@ -411,11 +466,12 @@
                         </div>
                     </div>
 
+                    <!-- Parcours professionnel -->
                     <div class="cv-card card-animate">
                         <h3 class="cv-card-title">Parcours professionnel & Militaire</h3>
                         <div class="cv-item">
                             <h4>Réserviste - 4ᵉ Régiment de Chasseurs Alpins</h4>
-                            <span class="cv-date">2023 - 2025</span>
+                            <span class="cv-date">2023 – présent</span>
                             <ul>
                                 <li>Opération Sentinelle en Île-de-France (2024-2025)</li>
                                 <li>BSM (Brevet de Skieur Militaire) - 2025</li>
@@ -423,7 +479,7 @@
                         </div>
                         <div class="cv-item">
                             <h4>Travail en menuiserie</h4>
-                            <span class="cv-date">2023 - 2025</span>
+                            <span class="cv-date">2023 – présent</span>
                             <p>Activité professionnelle en parallèle des études</p>
                         </div>
                         <div class="cv-item">
@@ -432,6 +488,7 @@
                         </div>
                     </div>
 
+                    <!-- Centres d'intérêt -->
                     <div class="cv-card card-animate">
                         <h3 class="cv-card-title">Centres d'intérêt</h3>
                         <div class="interests">
@@ -482,6 +539,7 @@
         </div>
     </section>
 
+    <!-- Projets Section -->
     <section id="projets" class="section projects-section">
         <div class="container">
             <h2 class="section-title" data-i18n="section.projects">Mes réalisations</h2>
@@ -489,9 +547,10 @@
                 personnels</p>
 
             <div class="projects-grid">
+                <!-- Projet 1 -->
                 <article class="project-card card-animate">
                     <div class="project-image">
-                        <img src="game-project.jpg" alt="Jeu Vidéo 2D">
+                        <img src="assets/images/game-project.jpg" alt="Jeu Vidéo 2D">
                         <div class="project-overlay">
                             <a href="projet-jeu-video.html" class="btn btn-small">Voir le projet</a>
                         </div>
@@ -500,7 +559,8 @@
                         <h3>Développement d'un jeu vidéo 2D</h3>
                         <p class="project-type">SAÉ S2 - Projet académique</p>
                         <p class="project-description">
-                            Réalisation d'un jeu rétro 2D avec conception UML complète, développement sous Visual Studio
+                            Réalisation d'un jeu rétro 2D avec conception UML complète, développement sous Visual
+                            Studio
                             et WPF, gestion de version avec Git/GitHub.
                         </p>
                         <div class="project-tags">
@@ -513,9 +573,10 @@
                     </div>
                 </article>
 
+                <!-- Projet 2 -->
                 <article class="project-card card-animate">
                     <div class="project-image">
-                        <img src="database-project.jpg" alt="Base de Données">
+                        <img src="assets/images/database-project.jpg" alt="Base de Données">
                         <div class="project-overlay">
                             <a href="projet-base-donnees.html" class="btn btn-small">Voir le projet</a>
                         </div>
@@ -536,9 +597,10 @@
                     </div>
                 </article>
 
+                <!-- Projet 3 -->
                 <article class="project-card card-animate">
                     <div class="project-image">
-                        <img src="web-project.jpg" alt="Sites Web">
+                        <img src="assets/images/web-project.jpg" alt="Sites Web">
                         <div class="project-overlay">
                             <a href="projet-sites-web.html" class="btn btn-small">Voir le projet</a>
                         </div>
@@ -560,13 +622,147 @@
                     </div>
                 </article>
 
+                <!-- Projet 4 : Enchères -->
+                <article class="project-card card-animate">
+                    <div class="project-image">
+                        <img src="assets/images/database-project.jpg" alt="Application d'Enchères Électroniques">
+                        <div class="project-overlay">
+                            <a href="projet-enchere.html" class="btn btn-small">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Application d'Enchères Électroniques</h3>
+                        <p class="project-type">SAÉ S3.B.01 — Projet académique en binôme</p>
+                        <p class="project-description">
+                            Système client-serveur d'enchères à plis fermés (protocole Vickrey). Architecture
+                            hybride : sockets TCP Java pour le protocole sécurisé, Spring Boot pour l'interface web.
+                            Réalisé en méthode Agile Scrum sur 5 sprints.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">TCP Sockets</span>
+                            <span class="tag">Cryptographie</span>
+                            <span class="tag">Scrum</span>
+                        </div>
+                    </div>
+                </article>
 
             </div>
         </div>
     </section>
 
 
+    <!-- Compétences Section -->
+    <section id="competences" class="section">
+        <div class="container">
+            <h2 class="section-title">Bilan de compétences</h2>
+            <p class="section-subtitle">Cliquez sur une compétence pour voir le détail</p>
 
+            <div class="competences-grid">
+                <!-- Compétence 1 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="16" y1="18" x2="22" y2="12"></line>
+                            <line x1="22" y1="12" x2="16" y2="6"></line>
+                            <line x1="8" y1="6" x2="2" y2="12"></line>
+                            <line x1="2" y1="12" x2="8" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">C#, Java, PHP</span>
+                        <h3 class="comp-title">Réaliser un Développement d'Application</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 2 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #fca5a5; background: rgba(252, 165, 165, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Algorithmique, Complexité</span>
+                        <h3 class="comp-title">Optimiser des Applications</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 3 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #a855f7; background: rgba(168, 85, 247, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Linux, Réseaux, Serveurs</span>
+                        <h3 class="comp-title">Administrer des Systèmes Complexes</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 4 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">SQL, Oracle, MySQL</span>
+                        <h3 class="comp-title">Gérer des Données de l'Information</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 5 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #10b981; background: rgba(16, 185, 129, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Agile, Scrum, Trello</span>
+                        <h3 class="comp-title">Conduire un Projet</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+
+                <!-- Compétence 6 -->
+                <a href="competences.html" class="comp-card card-animate">
+                    <div class="comp-icon-wrapper" style="color: #ec4899; background: rgba(236, 72, 153, 0.1);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="comp-content">
+                        <span class="comp-tech-tags">Git, Communication</span>
+                        <h3 class="comp-title">Collaborer au Sein d'une Équipe</h3>
+                    </div>
+                    <div class="comp-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2 class="section-title" data-i18n="section.contact">Me contacter</h2>
@@ -639,6 +835,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -648,8 +845,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-

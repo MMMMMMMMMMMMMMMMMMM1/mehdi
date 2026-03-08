@@ -6,13 +6,12 @@
     <meta name="description" content="Projet SAÉ - Développement d'un jeu vidéo 2D rétro avec C# et WPF">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:;">
     <title>Jeu Vidéo 2D - Mehdi EL ALLAM</title>
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="project-page.css">
-    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/project-page.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <div class="logo">
@@ -35,6 +34,7 @@
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
@@ -56,8 +56,10 @@
         </div>
     </section>
 
+    <!-- Project Content -->
     <section class="section project-content">
         <div class="container">
+            <!-- Contexte -->
             <div class="content-block card-animate">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -95,6 +97,7 @@
                 </ul>
             </div>
 
+            <!-- Méthodes de travail -->
             <div class="content-block card-animate">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -134,8 +137,61 @@
                         <p>Discord, Microsoft Teams</p>
                     </div>
                 </div>
+
+                <h3>Étapes de développement</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Phase 1 : Conception</h4>
+                            <ul>
+                                <li>Brainstorming et définition du concept de jeu</li>
+                                <li>Élaboration des diagrammes UML (cas d'utilisation, classes, séquence)</li>
+                                <li>Design de l'architecture logicielle (pattern MVC)</li>
+                                <li>Maquettage de l'interface utilisateur</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Phase 2 : Développement du moteur</h4>
+                            <ul>
+                                <li>Mise en place de la boucle de jeu</li>
+                                <li>Système de gestion des entités et composants</li>
+                                <li>Détection des collisions</li>
+                                <li>Gestion des sprites et animations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Phase 3 : Gameplay et niveaux</h4>
+                            <ul>
+                                <li>Implémentation des mécaniques de jeu</li>
+                                <li>Création de multiples niveaux avec difficulté progressive</li>
+                                <li>Système de score et de high scores</li>
+                                <li>Gestion des vies et game over</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Phase 4 : Interface et Polish</h4>
+                            <ul>
+                                <li>Développement de l'interface WPF (menus, HUD)</li>
+                                <li>Ajout d'effets visuels et sonores</li>
+                                <li>Tests unitaires et intégration</li>
+                                <li>Optimisations de performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <!-- Résultats -->
             <div class="content-block card-animate">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -200,6 +256,7 @@
                 </p>
             </div>
 
+            <!-- Apprentissages -->
             <div class="content-block card-animate">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -277,6 +334,7 @@
                 </p>
             </div>
 
+            <!-- Contribution personnelle -->
             <div class="content-block card-animate">
                 <div class="icon-box">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -357,6 +415,7 @@
                 </div>
             </div>
 
+            <!-- Back to projects -->
             <div class="back-link">
                 <a href="index.html#projets" class="btn btn-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -369,6 +428,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -378,6 +438,6 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

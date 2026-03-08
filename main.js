@@ -454,6 +454,9 @@ class AccessibilityEnhancer {
     }
 
     addSkipLink() {
+        // Only add skip link on the main page (not on project pages)
+        if (!document.getElementById('presentation')) return;
+
         const skipLink = document.createElement('a');
         skipLink.href = '#presentation';
         skipLink.className = 'skip-link';
