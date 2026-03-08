@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bilan de compétences BUT Informatique - Mehdi EL ALLAM, étudiant en 2ème année">
+    <title>Bilan de Compétences - Mehdi EL ALLAM</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/project-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ---- Page-specific styles ---- */
+        .competences-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, rgba(2, 12, 27, 0.9), rgba(10, 25, 47, 0.85));
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .competences-intro {
+            max-width: 720px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Grid des 6 compétences */
+        .competences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .competence-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-2xl);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+        }
+
+        .competence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .competence-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl), var(--shadow-glow);
+            border-color: rgba(56, 189, 248, 0.25);
+        }
+
+        .competence-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1em;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            opacity: 0.8;
+        }
+
+        .competence-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .competence-summary {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Niveaux BUT1 / BUT2 */
+        .competence-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .level-block {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            padding: 1rem 1.25rem;
+        }
+
+        .level-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.65rem;
+            border-radius: 10px;
+            margin-bottom: 0.6rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .level-tag--but1 {
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--primary-light);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+
+        .level-tag--but2 {
+            background: rgba(168, 85, 247, 0.12);
+            color: #c084fc;
+            border: 1px solid rgba(168, 85, 247, 0.25);
+        }
+
+        .level-description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* AC list */
+        .ac-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .ac-list li {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+
+        .ac-list li::before {
+            content: '›';
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        /* Badge niveau global */
+        .competence-badge {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 2rem;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        @media (max-width: 640px) {
+            .competences-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">MEA</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="index.html#presentation" class="nav-link">Présentation</a></li>
+                <li><a href="index.html#cv" class="nav-link">CV</a></li>
+                <li><a href="index.html#projets" class="nav-link">Réalisations</a></li>
+                <li><a href="competences.html" class="nav-link active">Compétences</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="competences-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Bilan de compétences</span>
+            </div>
+            <h1 class="project-title">Bilan de Compétences BUT Informatique</h1>
+            <p class="competences-intro">
+                Le BUT Informatique est structuré autour de six compétences transversales, développées progressivement
+                sur les niveaux BUT1 et BUT2. Voici mon bilan personnel pour chacune d'elles, mis en regard de mes
+                réalisations concrètes.
+            </p>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section project-content">
+        <div class="container">
+            <div class="competences-grid">
+
+                <!-- Compétence 1 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">💻</div>
+                    <div class="competence-number">Compétence 01</div>
+                    <h2 class="competence-title">Réaliser un Développement d'Application</h2>
+                    <p class="competence-summary">
+                        Du prototype de départ jusqu'à l'application complète — conception objet, interfaces
+                        utilisateurs, tests et bonnes pratiques de développement.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Développer des applications simples</p>
+                            <ul class="ac-list">
+                                <li>Implémenter des conceptions simples en Java et produire des pages web statiques</li>
+                                <li>Élaborer des architectures POO et schématiser des diagrammes de classes</li>
+                                <li>Réaliser des tests unitaires JUnit et valider la conformité HTML/W3C</li>
+                                <li>Créer des interfaces graphiques (JavaFX, sites responsives)</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Partir des exigences jusqu'à une application complète</p>
+                            <ul class="ac-list">
+                                <li>Analyser les besoins et rédiger les spécifications fonctionnelles et non
+                                    fonctionnelles</li>
+                                <li>Appliquer des principes d'UX et d'accessibilité (Spring Boot, Android)</li>
+                                <li>Respecter le design pattern MVC, utiliser la généricité en PHP</li>
+                                <li>Tester via Mockito pour valider la logique métier (protocole Vickrey)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétence 2 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">⚡</div>
+                    <div class="competence-number">Compétence 02</div>
+                    <h2 class="competence-title">Optimiser des Applications</h2>
+                    <p class="competence-summary">
+                        Comprendre et construire des algorithmes efficaces, analyser leur complexité et sélectionner les
+                        structures de données adaptées aux problèmes posés.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Appréhender et construire des algorithmes</p>
+                            <ul class="ac-list">
+                                <li>Analyser un problème et concevoir un algorithme adapté</li>
+                                <li>Comparer des algorithmes de tri et de recherche</li>
+                                <li>Comprendre la complexité algorithmique (O notation)</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Sélectionner les algorithmes adéquats</p>
+                            <ul class="ac-list">
+                                <li>Choisir les structures de données optimales selon les contraintes</li>
+                                <li>Optimiser les performances d'une application existante</li>
+                                <li>Évaluer les compromis temps/mémoire dans les solutions proposées</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétence 3 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">🖥️</div>
+                    <div class="competence-number">Compétence 03</div>
+                    <h2 class="competence-title">Administrer des Systèmes Complexes</h2>
+                    <p class="competence-summary">
+                        Installation et configuration de postes et serveurs, déploiement de services en réseau,
+                        administration Linux et virtualisation.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Installer et configurer un poste de travail</p>
+                            <ul class="ac-list">
+                                <li>Installer et configurer un OS Linux (Ubuntu, Debian)</li>
+                                <li>Gérer les permissions, utilisateurs et scripts shell</li>
+                                <li>Mettre en place un environnement de développement complet</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Déployer des services dans une architecture réseau</p>
+                            <ul class="ac-list">
+                                <li>Configurer des serveurs (Apache, Nginx, services réseau)</li>
+                                <li>Mettre en place une architecture client-serveur TCP/IP</li>
+                                <li>Utiliser WireShark pour analyser le trafic réseau</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétence 4 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">🗄️</div>
+                    <div class="competence-number">Compétence 04</div>
+                    <h2 class="competence-title">Gérer des Données de l'Information</h2>
+                    <p class="competence-summary">
+                        Concevoir et requêter des bases de données relationnelles, optimiser les accès, sécuriser les
+                        données et interagir avec des applications.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Concevoir et mettre en place une base de données</p>
+                            <ul class="ac-list">
+                                <li>Modéliser une base de données relationnelle (MCD, MLD)</li>
+                                <li>Rédiger des requêtes SQL (SELECT, JOIN, agrégats)</li>
+                                <li>Utiliser MySQL et Oracle pour la gestion de données</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Optimiser, interagir avec une application et sécuriser</p>
+                            <ul class="ac-list">
+                                <li>Écrire des procédures stockées et triggers en PL/SQL</li>
+                                <li>Connecter une base de données à une application via JDBC/Hibernate</li>
+                                <li>Optimiser les requêtes et sécuriser les accès aux données</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétence 5 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">📋</div>
+                    <div class="competence-number">Compétence 05</div>
+                    <h2 class="competence-title">Conduire un Projet</h2>
+                    <p class="competence-summary">
+                        Identifier les besoins, planifier un projet, appliquer une démarche Agile et assurer le suivi
+                        jusqu'à la livraison.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Identifier les besoins métiers</p>
+                            <ul class="ac-list">
+                                <li>Recueillir et formaliser les besoins d'un client</li>
+                                <li>Rédiger un cahier des charges et des user stories</li>
+                                <li>Utiliser des outils de gestion de projet (Trello, GitHub Projects)</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Appliquer une démarche de suivi de projet</p>
+                            <ul class="ac-list">
+                                <li>Piloter 5 sprints Scrum en tant que Product Owner (SAÉ S3 Enchères)</li>
+                                <li>Affiner le backlog, prioriser les tâches valeur/effort</li>
+                                <li>Assurer la relation client : recueil feedback, validation des incréments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétence 6 -->
+                <div class="competence-card card-animate">
+                    <div class="competence-badge">🤝</div>
+                    <div class="competence-number">Compétence 06</div>
+                    <h2 class="competence-title">Collaborer au Sein d'une Équipe Informatique</h2>
+                    <p class="competence-summary">
+                        Identifier ses aptitudes, définir son rôle dans l'équipe et contribuer efficacement à un projet
+                        collaboratif en environnement professionnel.
+                    </p>
+                    <div class="competence-levels">
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but1">BUT 1</span>
+                            <p class="level-description">Identifier ses aptitudes pour travailler en équipe</p>
+                            <ul class="ac-list">
+                                <li>Travailler en équipe de 4 sur des projets académiques</li>
+                                <li>Maîtriser Git Flow : branches, merge, pull requests, revues de code</li>
+                                <li>Communiquer efficacement via outils collaboratifs (Discord, Teams)</li>
+                            </ul>
+                        </div>
+                        <div class="level-block">
+                            <span class="level-tag level-tag--but2">BUT 2</span>
+                            <p class="level-description">Situer son rôle et ses missions dans l'équipe</p>
+                            <ul class="ac-list">
+                                <li>Occuper un rôle hybride PO + Lead Backend sur la SAÉ Enchères</li>
+                                <li>Encadrer techniquement et orienter les décisions d'architecture</li>
+                                <li>Transposer la rigueur militaire (leadership, calme sous pression) au travail
+                                    d'équipe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Back -->
+            <div class="back-link" style="margin-top: 3rem;">
+                <a href="index.html" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Mehdi EL ALLAM. Tous droits réservés.</p>
+                <p class="footer-subtitle">Étudiant en BUT Informatique | Réserviste Chasseur Alpin</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
